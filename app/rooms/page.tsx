@@ -366,7 +366,7 @@ export default function AllRoomsPage() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="roomType">Room Type</Label>
+                    <Label htmlFor="roomType">Section Type</Label>
                     <Select
                       value={roomTypeFilter || "any"}
                       onValueChange={(value) => setRoomTypeFilter(value === "any" ? null : value)}
@@ -375,7 +375,7 @@ export default function AllRoomsPage() {
                         <SelectValue placeholder="Any room type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="any">Any room type</SelectItem>
+                        <SelectItem value="any">Any section type</SelectItem>
                         {allRoomTypes.map((type) => (
                           <SelectItem key={type} value={type}>
                             {type}

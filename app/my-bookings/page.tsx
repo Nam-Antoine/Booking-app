@@ -248,7 +248,7 @@ export default function MyBookingsPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-3xl font-bold text-blue-900">My Bookings</h1>
-          <p className="text-muted-foreground">Manage and track your room bookings</p>
+          <p className="text-muted-foreground">Manage and track your section bookings</p>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" onClick={() => router.push("/")}>
@@ -256,9 +256,10 @@ export default function MyBookingsPage() {
           </Button>
           <Button
           className="bg-blue-700"
-            onClick={() =>
-              handleAddEvent(new Date(currentDate.setHours(9, 0, 0, 0)), new Date(currentDate.setHours(10, 0, 0, 0)))
-            }
+          onClick={() => router.push("/booking")}
+            // onClick={() =>
+            //   handleAddEvent(new Date(currentDate.setHours(9, 0, 0, 0)), new Date(currentDate.setHours(10, 0, 0, 0)))
+            // }
           >
             <Plus className="mr-2 h-4 w-4" />
             New Booking
