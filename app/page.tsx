@@ -61,43 +61,43 @@ import Image from "next/image"
 const rooms = [
   {
     id: 1,
-    name: "Lecture Hall A",
+    name: "Section A",
     capacity: 120,
     features: ["Projector", "Audio System", "Whiteboard"],
     location: "Main Building, Floor 1",
     availability: "Available",
     image: "/placeholder.svg?height=100&width=200",
-    type: "Lecture Hall",
+    type: "Section",
   },
   {
     id: 2,
-    name: "Seminar Room B",
+    name: "Section B",
     capacity: 40,
     features: ["Smart Board", "Video Conference"],
     location: "Science Block, Floor 2",
     availability: "Booked",
     image: "/placeholder.svg?height=100&width=200",
-    type: "Seminar Room",
+    type: "Section",
   },
   {
     id: 3,
-    name: "Computer Lab C",
+    name: "Section C",
     capacity: 30,
     features: ["30 Computers", "Projector", "Printer"],
     location: "Technology Wing, Floor 1",
     availability: "Available",
     image: "/placeholder.svg?height=100&width=200",
-    type: "Computer Lab",
+    type: "Section",
   },
   {
     id: 4,
-    name: "Study Room D",
+    name: "Section D",
     capacity: 15,
     features: ["Whiteboard", "Round Table"],
     location: "Library, Floor 3",
     availability: "Available",
     image: "/placeholder.svg?height=100&width=200",
-    type: "Study Room",
+    type: "Section",
   },
 ]
 
@@ -109,7 +109,7 @@ const initialEvents: CalendarEvent[] = [
     description: "Introduction to Quantum Mechanics",
     start: new Date(2025, 2, 15, 9, 0), // March 15, 2025, 9:00 AM
     end: new Date(2025, 2, 15, 11, 0), // March 15, 2025, 11:00 AM
-    section: "Lecture Hall A",
+    section: "Section A",
     bookedBy: "Dr. Smith",
     color: "bg-blue-100 text-blue-800",
   },
@@ -119,7 +119,7 @@ const initialEvents: CalendarEvent[] = [
     description: "Modern Poetry Analysis",
     start: new Date(2025, 2, 14, 13, 0), // March 14, 2025, 1:00 PM
     end: new Date(2025, 2, 14, 15, 0), // March 14, 2025, 3:00 PM
-    section: "Seminar Room B",
+    section: "Section B",
     bookedBy: "Prof. Johnson",
     color: "bg-green-100 text-green-800",
   },
@@ -129,7 +129,7 @@ const initialEvents: CalendarEvent[] = [
     description: "Introduction to React",
     start: new Date(2025, 2, 16, 10, 0), // March 16, 2025, 10:00 AM
     end: new Date(2025, 2, 16, 12, 0), // March 16, 2025, 12:00 PM
-    section: "Computer Lab C",
+    section: "Section C",
     bookedBy: "Ms. Williams",
     color: "bg-purple-100 text-purple-800",
   },
@@ -139,7 +139,7 @@ const initialEvents: CalendarEvent[] = [
     description: "Calculus Exam Preparation",
     start: new Date(2025, 2, 17, 14, 0), // March 17, 2025, 2:00 PM
     end: new Date(2025, 2, 17, 16, 0), // March 17, 2025, 4:00 PM
-    section: "Study Room D",
+    section: "Section D",
     bookedBy: "John Student",
     color: "bg-yellow-100 text-yellow-800",
   },
@@ -149,7 +149,7 @@ const initialEvents: CalendarEvent[] = [
     description: "Semester Planning",
     start: new Date(2025, 2, 18, 9, 0), // March 18, 2025, 9:00 AM
     end: new Date(2025, 2, 18, 10, 30), // March 18, 2025, 10:30 AM
-    section: "Seminar Room B",
+    section: "Section B",
     bookedBy: "Dean Roberts",
     color: "bg-red-100 text-red-800",
   },
@@ -373,14 +373,14 @@ export default function RoomBookingSystem() {
             <SidebarTrigger />
             <div className="flex flex-1 items-center justify-between">
               <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold">Room Booking System</h1>
+                <h1 className="text-xl font-bold">Section Booking System</h1>
               </div>
               <div className="flex items-center gap-4">
                 <div className="relative w-full max-w-sm">
                   <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                   <Input
                     type="search"
-                    placeholder="Search rooms..."
+                    placeholder="Search sections..."
                     value={searchQuery}
                     onChange={handleSearchChange}
                     className="w-full bg-muted pl-9 rounded-full border-none bg-transparnet"
@@ -412,7 +412,7 @@ export default function RoomBookingSystem() {
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight text-[32px] text-blue-900">Dashboard</h2>
-                <p className="text-muted-foreground">Manage your room bookings and reservations.</p>
+                <p className="text-muted-foreground">Manage your section bookings and reservations.</p>
               </div>
               <div className="flex items-center gap-2">
                 <Popover>
@@ -447,7 +447,7 @@ export default function RoomBookingSystem() {
               <div className="flex items-center justify-between">
                 <TabsList>
                   <TabsTrigger value="calendar" className="text-red-600" >Calendar</TabsTrigger>
-                  <TabsTrigger value="rooms" className="text-red-600">Rooms</TabsTrigger>
+                  <TabsTrigger value="rooms" className="text-red-600">Sections</TabsTrigger>
                   <TabsTrigger value="bookings" className="text-red-600">
                     My Bookings
                   </TabsTrigger>
@@ -473,7 +473,7 @@ export default function RoomBookingSystem() {
               </TabsContent>
               <TabsContent value="rooms" className="space-y-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-medium">Available Rooms</h3>
+                  <h3 className="text-lg font-medium">Available Sections</h3>
                   <div className="flex items-center gap-2">
                     <Button variant="outline" size="icon" onClick={() => setViewMode("grid")}>
                       <LayoutGrid className="h-4 w-4" />
